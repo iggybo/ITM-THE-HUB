@@ -29,6 +29,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentview(R.layout.activity_main);
+        
+        Button btnMap = (Button) findViewById(R.id.btnMap);
+        btnMap.setOnClickListener((v) -> {
+            if(mapReady)
+                n_map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        });
+        Button btnSatellite = (Button) findViewById(R.id.btnSatellite);
+        btnSatellite.setOnClickListener((v) -> {
+            if(mapReady)
+                n_map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        });
+        Button btnHybrid = (Button) findViewById(R.id.btnHybrid);
+        btnHybrid.setOnClickListener((v) -> {
+            if(mapReady)
+                n_map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        });
+        
+        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
+
+    @Override
     public void onMapReady(GoogleMap map){
         mapReady=true;
         m_map = map;
