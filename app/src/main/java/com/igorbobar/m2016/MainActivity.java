@@ -29,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onMapReady(GoogleMap map){
+        mapReady=true;
+        m_map = map;
+        LatLng munich = new LatLng(48.14965999999999,11.567860200000041);
+        CameraPosition target = CameraPosition.builder().target(munich).zoom(17).build();
+        m_map.moveCamera(CameraUpdateFactory.newCameraPosition(Target));
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
