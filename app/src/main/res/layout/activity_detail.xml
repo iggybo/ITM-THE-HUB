@@ -1,1 +1,11 @@
 <RelativeLayout xmlns:android
+    xmlns:tools="http://schema.android.com/res/auto"
+    android:layout_width="match-parent"
+    android:layout_height="match-parent"
+    android:paddingLeft="64dp"
+    android:paddingRight="64dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context="com.igorbobar.m2016"
+    
+</RelativeLayout>
