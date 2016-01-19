@@ -55,11 +55,35 @@ protected void onCreate(Bundle savedInstanceState) {
   mapFragment.getMapAsync(this);
 }
 
+GoogleMap m_map;
+boolean mapReady=false;
+LatLng tuinnenstadt1=new LatLng(48.151890, 11.567371)
+LatLng tuinnenstadt2=new LatLng(48.151006, 11.570608)
+LatLng tuinnenstadt3=new LatLng(48.146990, 11.568205)
+LatLng tuinnenstadt4=new LatLng(48.147820, 11.564825)
+
+LatLng tugarching1=new LatLng(48.272077, 11.663913)
+LatLng tugarching2=new LatLng(48.272108, 11.685706)
+LatLng tugarching3=new LatLng(48.258434, 11.679782)
+LatLng tugarching4=new LatLng(48.261180, 11.658981)
+
+LatLng lmuinnenstadt1=new LatLng(48.152992, 11.579284)
+LatLng lmuinnenstadt2=new LatLng(48.148926, 11.576645)
+LatLng lmuinnenstadt3=new LatLng(48.147429, 11.582348)
+LatLng lmuinnenstadt4=new LatLng(48.152156, 11.584292)
+
+static final CameraPosition MUNICH = CameraPosition.builder()
+        .target(new LatLng(48.13863099999999,11.573625399999969)
+        .zoom(16)
+        .bearing(0)
+        .tilt(45)
+        .build();
+
+
 @Override
 public void onMapReady(GoogleMap map){
-    mapReady=true;
-    m_map = map;
-    LatLng munich = new LatLng(48.14965999999999,11.567860200000041);
-    CameraPosition target = CameraPosition.builder().target(munich).zoom(17).build();
-    m_map.moveCamera(CameraUpdateFactory.newCameraPosition(Target));
+  map.moveCamera(CameraUpdateFactory.newCameraPosition(MUNICH));
+  map.addPolyline(new PolylineOptions().geodesic(true)
+          .add()
+    
 }
