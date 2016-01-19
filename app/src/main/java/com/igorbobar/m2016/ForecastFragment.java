@@ -76,9 +76,18 @@ public class ForecastFragment extends Fragment {
                         R.layout.list_item_forecast,
                         R.id.list_item_forecast_textview,
                         weekForecast);
-        ListView listView = (ListView) rootView.findViewById(
-                R.id.listview_forecast);
+                        
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+                    
+        ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
         listView.setAdapter(mForecastAdapter);
+        listView.setOnClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
+                String forecast = mForecastAdapter.getItem(position);
+                Toast.makeText(getActivity(), forecast, Toast.LENGTH_SHORT).show();
+            }
+        });
+        
         return rootView;
     }
 
