@@ -9,5 +9,12 @@
         android:defaultValue="80993, DE"
         android:inputType="text"
         android:singleLine="true" />
+        
+    <ListPreference
+        android:title="@string/pref_units_label"
+        android:key="@string/pref_units_key"
+        android:="@string/pref_units_metric"
+        android:="@array/pref_units_values"
+        android:="@array/pref_units_options" />
 
 </PreferenceScreen>
