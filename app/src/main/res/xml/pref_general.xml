@@ -4,9 +4,9 @@
     android:layout_height="match_parent">
 
     <EditTextPreference
-        android:title="@string/pref_location_label"
-        android:key="@string/pref_location_key"
-        android:defaultValue="@string/pref_location_default"
+        android:title="Location"
+        android:key="location"
+        android:defaultValue="80993, DE"
         android:inputType="text"
         android:singleLine="true" />
 
