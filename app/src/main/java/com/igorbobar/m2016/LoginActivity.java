@@ -4,8 +4,12 @@ public class LoginActivity extends AsyncTask <Integer, String[]> {
    
    @Override
    protected void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.login_detail);
+      GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+               .requestEmail().build();
+      mGoogleApiClient = new GoogleApiClient.Builder(this)
+               .enableAutoManage(this, this)
+               .build();
+               
    
    }
   
