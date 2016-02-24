@@ -4,8 +4,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.ShareActionProvider;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,8 +55,12 @@ public class DetailFragmentActivity extends ActionBarActivity {
      * A placeholder fragment containing a simple view.
      */
     public static class DetailFragment extends Fragment {
-
+        
+        private static final String LOG_TAG = DetailForecastFragment.class.getSimpleName();
+        private static final String FORECAST_SHARE_HASHTAG = "#M2016";
+        private String mForecastStr
         public DetailFragment() {
+            setHasOptionsMenu(true);
         }
 
         @Override
@@ -61,11 +69,25 @@ public class DetailFragmentActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
             Intent intent = getActivity().getIntent();
             if(intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
-                String forcastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
-                ((TextView) rootView.findViewById(R.id.detail_text)).setText(forecastStr);
+                mForecastStr = intent.getStringExtra(Intent.EXTRA_TEXT)
+                ((TextView) rootView.findViewById(R.id.detail_text)).setText(mForecastStr);
             }
             
             return rootView;
+        }
+        
+        @Override
+        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+            inflater.inflate(R.menu.detailfragment, menu);
+            
+            MenuItem menuItem = menu.findItem(R.id.action_share);
+            
+            ShareActionProvider mShareActonProvider =
+                (ShareActionProvider) MenuItemCompat.getActonProvider(menuItem);
+                
+            if (mShareActionProvider != null) {
+                mShareActionProvider.setShareIntent(createShareForecastIntent());
+            }    
         }
     }
 }
