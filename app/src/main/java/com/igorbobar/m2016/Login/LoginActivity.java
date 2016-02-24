@@ -77,6 +77,16 @@ public class LoginActivity extends AppCOmpatActivity {
    }
    
    @Override
+   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+      if (requestCode == REQUEST_SIGNUP) {
+         if (resultCode == RESULT_OK) {
+          
+            this.finish();
+         }
+      }
+   }
+   
+   @Override
    public void onBackPressed() {
       moveTaskToBack(true);
    }
