@@ -15,7 +15,7 @@ import android.widget.Toast;
 import butterknife.Butterknife;
 import butterknife.InjectView;
 
-public class LoginActivity extends AppCOmpatActivity {
+public class LoginActivity extends AppCompatActivity {
    
    private static final String TAG = "LoginActivity";
    private static final int REQUEST_SIGNUP = 0;
@@ -126,16 +126,16 @@ public class LoginActivity extends AppCOmpatActivity {
    }
 }
    
-   @Override
-   protected void onCreate(Bundle savedInstanceState) {
-      GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-               .requestEmail().build();
-      mGoogleApiClient = new GoogleApiClient.Builder(this)
-               .enableAutoManage(this, this)
-               .build();
-      LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
-      loginButton.setSize(LoginButton.SIZE_STANDARD);
-      loginButton.setScopes(gso.getScopeArray());
-   }
+   //@Override
+   //protected void onCreate(Bundle savedInstanceState) {
+   //   GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+   //            .requestEmail().build();
+   //   mGoogleApiClient = new GoogleApiClient.Builder(this)
+   //            .enableAutoManage(this, this)
+   //            .build();
+   //   LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+   //   loginButton.setSize(LoginButton.SIZE_STANDARD);
+   //   loginButton.setScopes(gso.getScopeArray());
+//   }
   
-}
+//}
