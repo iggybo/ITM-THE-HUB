@@ -49,6 +49,14 @@
             android:text="Create Account"
             android:gravity="center"
             android:textSize="16dp"/>
-            
+        
+        <TextView
+            <TextView android:id="@+id/link_nopw"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Forgot your password?"
+            android:gravity="center"
+            android:textSize="16dp"
     </LinearLayout>
 </ScrollView>
