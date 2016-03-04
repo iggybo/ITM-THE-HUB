@@ -15,6 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class HotelLocationFragment extends TourismActivity {
+public class HotelFragment extends TourismActivity {
   
 }
