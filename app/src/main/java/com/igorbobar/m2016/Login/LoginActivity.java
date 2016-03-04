@@ -1,3 +1,5 @@
+package com.igorbobar.m2016.Login;
+
 import java.util.Scanner;
 
 import android.app.ProgressDialog;
