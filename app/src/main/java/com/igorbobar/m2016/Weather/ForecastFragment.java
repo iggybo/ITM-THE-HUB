@@ -269,6 +269,16 @@ public class ForecastFragment extends Fragment {
             return null;
         }
         
+        private void updateEmptyView() {
+            if (mForecastAdapter.getCount() == 0) {
+                TextView tv = (TextView) getView().findViewById(R.id.listview_forecast_empty);
+                if (null != tv) {
+                    message = R.string.no_network_connection;
+                }
+                tv.setText(message);
+            }
+        }
+        
         @Override
         protected void onPostExecute(String[] result) {
             if (result != null) {
