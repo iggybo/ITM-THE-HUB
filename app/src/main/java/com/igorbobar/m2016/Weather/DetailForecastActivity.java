@@ -1,4 +1,4 @@
-package com.igorbobar.m2016;
+package com.igorbobar.m2016.Weather;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
