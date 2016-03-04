@@ -1,4 +1,4 @@
-package com.igorbobar.m2016.tourism;
+package com.igorbobar.m2016.Tourism;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
