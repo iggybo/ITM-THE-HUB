@@ -1,0 +1,6 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.igorbobar.m2016.Nightlife.NightlifeActivity"
+    android:fitsSystemWindows="true">
+    
