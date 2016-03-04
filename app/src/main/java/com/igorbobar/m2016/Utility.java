@@ -1,0 +1,11 @@
+
+
+static public boolean isNetworkAvailable(Context c) {
+    ConnectivityManager cm = 
+            (ConnectivityManager)c.getSystemService(Context.CONNECTIVITY_SERVICE);
+            
+    NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+    return activeNetwork != null &&
+            activeNetwork.isConnectedOrConnecting();
+  }
+}
