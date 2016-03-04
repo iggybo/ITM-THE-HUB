@@ -1,4 +1,4 @@
-package com.igorbobar.m2016;
+package com.igorbobar.m2016.Maps;
 
 import android.net.Uri;
 import android.os.AsyncTask;
